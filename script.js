@@ -23,32 +23,52 @@
 
 // sailorScouts is customers for me
 
-let customerImages = customers.map((customer) => customer.picture.large)
-let customerFirstNames = customers.map((customer) => customer.name.first)
-let customerLastNames = customers.map((customer) => customer.name.last)
+// let customerImages = customers.map((customer) => customer.picture.large)
+// let customerFirstNames = customers.map((customer) => customer.name.first)
+// let customerLastNames = customers.map((customer) => customer.name.last)
 
-function renderImages(arr) {
-    arr.forEach(image => {
-        let pic = document.createElement("img")
-        pic.src = image
-        document.getElementById("container").appendChild(pic)
-    })
-}
-renderImages(customerImages)
-function renderNames(arr) {
-    arr.forEach(name => {
-        let h2 = document.createElement("h2")
-        h2.innerText = name;
-        document.getElementById("container").appendChild(h2)
-    });
-}
-renderNames(customerFirstNames)
-function renderLastName(arr) {
-    arr.forEach(name => {
-        let h2 =document.createElement("h2")
-        h2.innerText = name;
-        document.getElementById("container").appendChild(h2)
-    });
-}
-renderLastName(customerLastNames)
+// function renderImages(arr) {
+//     arr.forEach(image => {
+//         let pic = document.createElement("img")
+//         pic.src = image
+//         document.getElementById("container").appendChild(pic)
+//     })
+// }
+// renderImages(customerImages)
+// function renderNames(arr) {
+//     arr.forEach(name => {
+//         let h2 = document.createElement("h2")
+//         h2.innerText = name;
+//         document.getElementById("container").appendChild(h2)
+//     });
+// }
+// renderNames(customerFirstNames)
+// function renderLastName(arr) {
+//     arr.forEach(name => {
+//         let h2 =document.createElement("h2")
+//         h2.innerText = name;
+//         document.getElementById("container").appendChild(h2)
+//     });
+// }
+// renderLastName(customerLastNames)
 
+// Take one customer object out of the array. Save it in a variable. Can you get the name of that customer out of that one object? Cool. Now, can you take that name and put it in an element in the DOM? If you get that, move on to the next piece of data. Bit by bit!
+// Once you can make one complete customer, you can modify your code to put that into a loop and do it on repeat for each object in the array.
+
+// let fullname = name {
+//     title: 'dr',
+//     first: 'sophia',
+//     last: 'burns'
+//   },
+
+const customer = customers[0]
+
+const insertionPoint = document.querySelector('#output')
+
+const customerCard = document.createElement('div')
+
+customerCard.classList.add('customer-card')
+insertionPoint.appendChild(customerCard)
+console.log(customerCard)
+const customerName = customers.name.first + ' ' + customers.name.last
+customerCard.innerHTML = `<h2>${customerName}</h2>`
