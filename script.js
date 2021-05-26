@@ -1,6 +1,4 @@
-
-
-// let customerName = customers.forEach(customer) => 
+// let customerName = customers.forEach(customer) =>
 // customer.name("first")
 
 // function renderName(name) {
@@ -11,7 +9,6 @@
 //     document.getElementById("allcustomers")
 //     renderName
 // }
-
 
 // function renderName(array) {
 //     const nameHeading = document.createElement("h2")
@@ -61,14 +58,41 @@
 //     last: 'burns'
 //   },
 
-const customer = customers[0]
+const customer = customers[0];
 
-const insertionPoint = document.querySelector('#output')
+const insertionPoint = document.querySelector("#output");
 
-const customerCard = document.createElement('div')
+// const customerCard = document.createElement("div");
 
-customerCard.classList.add('customer-card')
-insertionPoint.appendChild(customerCard)
-console.log(customerCard)
-const customerName = customers.name.first + ' ' + customers.name.last
-customerCard.innerHTML = `<h2>${customerName}</h2>`
+// customerCard.classList.add("customer-card");
+// insertionPoint.appendChild(customerCard);
+// console.log(customerCard);
+// const customerName = customer.name.first + " " + customer.name.last;
+// customerCard.innerHTML = `<h2>${customerName}</h2>`;
+
+// const customerImg = document.createElement("img");
+// customerImg.src = customer.picture.large;
+// customerCard.appendChild(customerImg);
+// // debugged "Uncaught TypeError: Cannot read property 'first' of undefined" and got my name to appear! that's a win!
+
+// const emailEl = document.createElement("p");
+// emailEl.innerText = customer.email;
+// customerCard.appendChild(emailEl);
+
+for (let customer of customers) {
+  const customerCard = document.createElement("div");
+  customerCard.classList.add("customer-card");
+  insertionPoint.appendChild(customerCard);
+  console.log(customerCard);
+  const customerName = customer.name.first + " " + customer.name.last;
+  customerCard.innerHTML = `<h2>${customerName}</h2>`;
+
+  const customerImg = document.createElement("img");
+  customerImg.src = customer.picture.large;
+  customerCard.appendChild(customerImg);
+  // debugged "Uncaught TypeError: Cannot read property 'first' of undefined" and got my name to appear! that's a win!
+
+  const emailEl = document.createElement("p");
+  emailEl.innerText = customer.email;
+  customerCard.appendChild(emailEl);
+}
